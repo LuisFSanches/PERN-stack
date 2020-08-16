@@ -1,0 +1,109 @@
+.form-container {
+  width: 100vw;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  margin-top: 1.7rem;
+}
+
+.form-container fieldset {
+  border: 0.15rem solid #fff;
+  border-radius: 1rem;
+  padding: 2rem;
+  background: #fff;
+}
+
+.form-container h1 {
+  margin: 0 auto;
+  align-items: center;
+  text-align: center;
+  font-size: 2.3rem;
+  font-weight: bold;
+  color: #00bba2;
+  margin-top: 0.5rem;
+  margin-bottom: 0.3rem;
+}
+.form-container img {
+  margin: 0 auto;
+  width: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container .field-group {
+  margin-top: 1rem;
+}
+
+.form-container .field-group .field {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 1.3rem;
+}
+
+.form-container .field-group .field label {
+  font-size: 1.3rem;
+  color: #00bba2;
+  margin-right: 2.5rem;
+  width: 5rem;
+  margin-bottom: 0.5rem;
+}
+
+.form-container .field-group .field input {
+  flex: 1;
+  border: 1px solid #a4947b;
+  border-radius: 0.5rem;
+  padding: 1.3rem;
+  outline: none;
+  background: #f6f6f6;
+}
+.form-container .button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 1.1rem;
+}
+.form-container .button button {
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  width: 15rem;
+  font-size: 1.5rem;
+  border: 0.2rem solid #00bba2;
+  background: #00bba2;
+  border-radius: 0.7rem;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+}
+.form-container .button p,
+a {
+  text-decoration: none;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1.1rem;
+  color: black;
+}
+.form-container .button p strong {
+  margin-left: 0.3rem;
+  color: #00bba2;
+}
+@media (max-width: 600px) {
+  .form-container {
+    margin-top: 0;
+    padding: 0.6rem;
+  }
+  .form-container .button {
+    padding: 0.2rem;
+  }
+  .form-container .button button {
+    flex: 1;
+    padding: 0.7rem;
+  }
+}
