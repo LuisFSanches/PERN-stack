@@ -1,9 +1,9 @@
 import React from "react";
-import user_logo from "../../../assets/images/usuario-icon.png";
-import "./style.css";
+import user_logo from "../../assets/images/usuario-icon.png";
+import "../../components/form/style.css";
 // import { Container } from './styles';
 
-function Register_form() {
+function PersonalDetails() {
   return (
     <div className="register">
       <form className="form-container">
@@ -36,4 +36,4 @@ function Register_form() {
   );
 }
 
-export default Register_form;
+export default PersonalDetails;

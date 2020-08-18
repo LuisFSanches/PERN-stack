@@ -3,6 +3,13 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  background-color: #eeeeee;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
 selecta,
 p {
   font-family: Yanone Kaffeesatz sans-serif;
