@@ -8,7 +8,8 @@ module.exports = async (req, res, next) => {
     }
 
     const payload = jwt.verify(jwtToken, process.env.jwtSecret);
-    console.log(payload);
+    //console.log(payload);
+
     req.user = payload.user;
   } catch (err) {
     console.log(err);

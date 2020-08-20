@@ -1,5 +1,6 @@
 const { Create_User } = require("../models/User");
 const { Create_Profession } = require("../models/Profession");
+const jwtGenerator = require("../utils/jwtGenerator");
 
 const bcrypt = require("bcryptjs");
 
@@ -19,7 +20,13 @@ module.exports = {
     if (user.rows.length !== 0) {
       return res.json("Email já cadastrado");
     }
-    const newuser = Create_User(name, email, hashed_password);
-    return res.json("Siga para a próxima página de cadastro");
+    const newuser = await db.query(
+      "INSERT INTO _user(name, email, password) VALUES ($1,$2,$3) RETURNING *",
+      [name, email, hashed_password]
+    );
+
+    const token = jwtGenerator(newuser.rows[0].id_user);
+
+    return res.json({ token });
   },
 };
