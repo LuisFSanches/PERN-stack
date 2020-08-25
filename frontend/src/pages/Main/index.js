@@ -6,16 +6,19 @@ import "../../components/form/style.css";
 // import { Container } from './styles';
 
 function LoginForm({ history }) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [inputs, setInputs] = useState({
+    email: "",
+    password: "",
+  });
 
   async function handleLogin(e) {
     e.preventDefault();
     const response = await api.post("/login", {
-      email: email,
-      password: password,
+      email: inputs.email,
+      password: inputs.password,
     });
-    console.log(response.data);
+
+    console.log(response.data.email);
     history.push("/dashboard");
   }
 
@@ -29,20 +32,12 @@ function LoginForm({ history }) {
           <div className="field-group">
             <div className="field">
               <label htmlFor="">Email:</label>
-              <input
-                type="email"
-                name="email"
-                onChange={(e) => setEmail(e.target.value)}
-              />
+              <input type="email" name="email" onChange={""} />
             </div>
 
             <div className="field">
               <label htmlFor="">Password:</label>
-              <input
-                type="password"
-                name="passord"
-                onChange={(e) => setPassword(e.target.value)}
-              />
+              <input type="password" name="passord" onChange={""} />
             </div>
           </div>
           <div className="button">
