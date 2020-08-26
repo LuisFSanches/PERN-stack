@@ -3,9 +3,9 @@ import user_logo from "../../assets/images/usuario-icon.png";
 import "../../components/form/style.css";
 // import { Container } from './styles';
 
-import api from "../../services/api";
+import { api } from "../../services/api";
 
-function PersonalDetails({ setAuth }) {
+function PersonalDetails({ history }) {
   const [inputs, setInputs] = useState({
     name: "",
     email: "",
@@ -27,10 +27,10 @@ function PersonalDetails({ setAuth }) {
       password: password,
     });
     localStorage.setItem("token", response.data.token);
-
     console.log(response.data);
+    history.push("/dashboard");
   };
-  setAuth(true);
+
   return (
     <div className="register">
       <form className="form-container" onSubmit={handleSubmit}>
@@ -46,6 +46,7 @@ function PersonalDetails({ setAuth }) {
                 name="name"
                 onChange={(e) => onChange(e)}
                 value={name}
+                required
               />
             </div>
 
@@ -56,6 +57,7 @@ function PersonalDetails({ setAuth }) {
                 name="email"
                 onChange={(e) => onChange(e)}
                 value={email}
+                required
               />
             </div>
 
@@ -66,6 +68,7 @@ function PersonalDetails({ setAuth }) {
                 name="password"
                 onChange={(e) => onChange(e)}
                 value={password}
+                required
               />
             </div>
           </div>
